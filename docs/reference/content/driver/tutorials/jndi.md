@@ -84,3 +84,22 @@ MongoDB cluster:
         </resource-ref>
 
 A MongoClient instance will be accessible via the JNDI name `mongodb/MyMongoClient` in the `java:comp/env` context.
+
+### WebSphere Application Server
+
+The steps below are applicable for WebSphere version 8.5, other versions may vary slightly.
+
+1. Login to your Websphere Application Server Administration Console
+2. Select Resources -> Resource Environment -> Resource Environment Provider
+3. Create a new Provider, then click on the new Provider
+4. Click on Referenceables then click on New
+5. Enter `com.mongodb.client.jndi.MongoClientFactory` for the "Factory class name" 
+6. Enter `com.mongodb.MongoClient` for the "Class name"
+7. Click Apply, then OK
+8. Go to Resource Environment Entries and create a new JNDI
+9. Enter a Name, e.g. `MongoDB JNDI Property`
+10. Enter a JNDI Name, e.g. ``mongodb/MyMongoClient`
+
+
+
+
